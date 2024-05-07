@@ -40,7 +40,11 @@ ListNode* LinkedLists::InsertFirst(ListNode** head, int d) {
 }
 
 void LinkedLists::InsertAfter(ListNode* lastNode, int d) {
+	ListNode* newNode = new ListNode;
 
+	newNode->data = d;
+	newNode->next = lastNode->next;
+	lastNode->next = newNode;
 }
 
 void LinkedLists::DeleteList(ListNode** node) {
