@@ -84,6 +84,10 @@ ListNode* LinkedLists::GetNode(ListNode* node, int pos) {
 	return nullptr;
 }
 
+void LinkedLists::DeleteAt(ListNode* node, int pos) {
+
+}
+
 ListNode* LinkedLists::Find(ListNode* node, int val) {
 	while (node != nullptr) {
 		if (node->data == val) {
