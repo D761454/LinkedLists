@@ -10,6 +10,8 @@ int main() {
 	lists->InsertFirst(&head, 0);
 	lists->InsertAfter(head->next, 40);
 	lists->PrintList(head);
+	lists->DeleteAfter(head->next);
+	lists->PrintList(head);
 	lists->DeleteList(&head);
 	lists->PrintList(head);
 }

@@ -60,7 +60,13 @@ void LinkedLists::DeleteList(ListNode** node) {
 }
 
 void LinkedLists::DeleteAfter(ListNode* node) {
+	ListNode* pTemp;
+	if (node != nullptr && node->next != nullptr) {
+		pTemp = node->next;
+		node->next = pTemp->next;
 
+		delete pTemp;
+	}
 }
 
 //ListNode* LinkedLists::GetNode(ListNode* node, int pos) {
