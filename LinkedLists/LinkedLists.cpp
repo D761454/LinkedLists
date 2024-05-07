@@ -30,7 +30,13 @@ ListNode* LinkedLists::MakeNode(ListNode** head, int d) {
 }
 
 ListNode* LinkedLists::InsertFirst(ListNode** head, int d) {
+	ListNode* newNode = new ListNode;
 
+	newNode->data = d;
+	newNode->next = *head;
+	*head = newNode;
+
+	return newNode;
 }
 
 void LinkedLists::InsertAfter(ListNode* lastNode, int d) {
@@ -45,17 +51,17 @@ void LinkedLists::DeleteAfter(ListNode* node) {
 
 }
 
-ListNode* LinkedLists::GetNode(ListNode* node, int pos) {
-
-}
-
-ListNode* LinkedLists::Find(ListNode* node, int val) {
-
-}
+//ListNode* LinkedLists::GetNode(ListNode* node, int pos) {
+//
+//}
+//
+//ListNode* LinkedLists::Find(ListNode* node, int val) {
+//
+//}
 
 void LinkedLists::PrintList(ListNode* node) {
 	while (node != nullptr) {
-		std::cout << std::setw(5) << "| " << node->data << "|-->";
+		std::cout << std::setw(5) << "| " << node->data << " |-->";
 		node = node->next;
 	}
 
