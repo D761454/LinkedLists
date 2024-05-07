@@ -47,14 +47,23 @@ void LinkedLists::InsertAfter(ListNode* lastNode, int d) {
 	lastNode->next = newNode;
 }
 
+// recursive
 void LinkedLists::DeleteList(ListNode** node) {
-	ListNode* pTemp = *node;
-	ListNode* next;
+//	ListNode* pTemp = *node;
+//	ListNode* next;
+//
+//	while (pTemp != nullptr) {
+//		next = pTemp->next;
+//		delete pTemp;
+//		pTemp = next;
+//	}
+//	*node = nullptr;
 
-	while (pTemp != nullptr) {
-		next = pTemp->next;
+	ListNode* pTemp = *node;
+
+	if (pTemp != nullptr) {
+		DeleteList(&pTemp->next);
 		delete pTemp;
-		pTemp = next;
 	}
 	*node = nullptr;
 }
@@ -113,8 +122,9 @@ void LinkedLists::DeleteAt(ListNode* node, int pos) {
 	}
 }
 
+// recursive
 ListNode* LinkedLists::Find(ListNode* node, int val) {
-	while (node != nullptr) {
+	/*while (node != nullptr) {
 		if (node->data == val) {
 			std::cout << val << " is present in the list." << std::endl;
 			return node;
@@ -122,9 +132,21 @@ ListNode* LinkedLists::Find(ListNode* node, int val) {
 		node = node->next;
 	}
 	std::cout << val << " was not a valid item..." << std::endl;
-	return nullptr;
+	return nullptr;*/
+	if (node != nullptr) {
+		if (node->data == val) {
+			std::cout << val << " is present in the list." << std::endl;
+			return node;
+		}
+		Find(node->next, val);
+	}
+	else {
+		std::cout << val << " was not a valid item..." << std::endl;
+		return nullptr;
+	}
 }
 
+// recursive
 void LinkedLists::PrintList(ListNode* node) {
 	/*while (node != nullptr) {
 		std::cout << std::setw(5) << "| " << node->data << " |-->";
@@ -146,6 +168,7 @@ void LinkedLists::PrintList(ListNode* node) {
 	}
 }
 
+// recursive
 void LinkedLists::PrintListBackwards(ListNode* node) {
 	if (node != nullptr) {
 		PrintListBackwards(node->next);

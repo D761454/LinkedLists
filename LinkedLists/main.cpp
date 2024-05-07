@@ -10,4 +10,7 @@ int main() {
 	lists->InsertFirst(&head, 0);
 	lists->InsertAfter(head->next->next, 40);
 	lists->PrintList(head);
+	lists->Find(head, 20);
+	lists->DeleteList(&head);
+	lists->PrintList(head);
 }
