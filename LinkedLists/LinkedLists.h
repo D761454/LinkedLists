@@ -20,6 +20,8 @@ public:
 
 	ListNode* Find(ListNode* node, int val);
 	void PrintList(ListNode* node);
+
+	void PrintListBackwards(ListNode* node);
 private:
 	ListNode* head = nullptr;
 };

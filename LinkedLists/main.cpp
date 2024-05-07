@@ -8,14 +8,6 @@ int main() {
 	lists->MakeNode(&head, 10);
 	lists->MakeNode(&head, 20);
 	lists->InsertFirst(&head, 0);
-	lists->InsertAfter(head->next, 40);
-	lists->PrintList(head);
-	lists->DeleteAfter(head->next);
-	lists->PrintList(head);
-	lists->GetNode(head, 2);
-	lists->Find(head, 20);
-	lists->DeleteAt(head, 2);
-	lists->PrintList(head);
-	lists->DeleteList(&head);
+	lists->InsertAfter(head->next->next, 40);
 	lists->PrintList(head);
 }

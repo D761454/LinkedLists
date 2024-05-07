@@ -126,7 +126,7 @@ ListNode* LinkedLists::Find(ListNode* node, int val) {
 }
 
 void LinkedLists::PrintList(ListNode* node) {
-	while (node != nullptr) {
+	/*while (node != nullptr) {
 		std::cout << std::setw(5) << "| " << node->data << " |-->";
 		node = node->next;
 	}
@@ -135,5 +135,20 @@ void LinkedLists::PrintList(ListNode* node) {
 		std::cout << "| NULL |" << std::endl;
 	}
 
-	std::cout << std::endl;
+	std::cout << std::endl;*/
+
+	if (node != nullptr) {
+		std::cout << std::setw(5) << "| " << node->data << " |-->";
+		PrintList(node->next);
+	}
+	else {
+		std::cout << std::setw(5) << "| NULL |" << std::endl;
+	}
+}
+
+void LinkedLists::PrintListBackwards(ListNode* node) {
+	if (node != nullptr) {
+		PrintListBackwards(node->next);
+		std::cout << std::setw(5) << "| " << node->data << " |-->";
+	}
 }
