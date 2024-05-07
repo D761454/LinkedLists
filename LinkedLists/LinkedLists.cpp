@@ -54,5 +54,14 @@ ListNode* LinkedLists::Find(ListNode* node, int val) {
 }
 
 void LinkedLists::PrintList(ListNode* node) {
+	while (node != nullptr) {
+		std::cout << std::setw(5) << "| " << node->data << "|-->";
+		node = node->next;
+	}
 
+	if (node == nullptr) {
+		std::cout << "| NULL |" << std::endl;
+	}
+
+	std::cout << std::endl;
 }
