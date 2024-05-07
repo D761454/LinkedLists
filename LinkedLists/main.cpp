@@ -12,6 +12,8 @@ int main() {
 	lists->PrintList(head);
 	lists->DeleteAfter(head->next);
 	lists->PrintList(head);
+	lists->GetNode(head, 2);
+	lists->Find(head, 20);
 	lists->DeleteList(&head);
 	lists->PrintList(head);
 }
