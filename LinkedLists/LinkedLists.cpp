@@ -69,13 +69,24 @@ void LinkedLists::DeleteAfter(ListNode* node) {
 	}
 }
 
-//ListNode* LinkedLists::GetNode(ListNode* node, int pos) {
-//
-//}
-//
-//ListNode* LinkedLists::Find(ListNode* node, int val) {
-//
-//}
+ListNode* LinkedLists::GetNode(ListNode* node, int pos) {
+	int count = 0;
+
+	while (node != nullptr) {
+		if (count == pos) {
+			std::cout << "Data stored at position " << pos << " is: " << node->data << std::endl;
+			return node;
+		}
+		count++;
+		node = node->next;
+	}
+	std::cout << pos << " was not a valid position..." << std::endl;
+	return nullptr;
+}
+
+ListNode* LinkedLists::Find(ListNode* node, int val) {
+
+}
 
 void LinkedLists::PrintList(ListNode* node) {
 	while (node != nullptr) {
